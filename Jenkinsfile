@@ -9,7 +9,7 @@ pipeline {
 
         stage('Pull Code from GitHub') {
             steps {
-                git branch: 'main', url: 'https://github.com/yourusername/your-repo.git'
+                git branch: 'main', url: 'https://github.com/Shubhamjadhavrao/tavaliing-web-site.git'
             }
         }
 
