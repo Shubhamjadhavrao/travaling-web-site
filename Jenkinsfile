@@ -5,6 +5,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
+             git branch: 'main',
                 git 'https://github.com/Shubhamjadhavrao/tavaliing-web-site.git'
             }
         }
