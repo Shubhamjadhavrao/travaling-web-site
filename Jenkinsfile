@@ -1,41 +1,36 @@
 pipeline {
-    agent any  // Runs the pipeline on any available Jenkins agent
-
-    environment {
-        IMAGE_NAME = "myapp:latest" // Docker image name
-    }
+    agent any
 
     stages {
 
-        stage('Pull Code from GitHub') {
+        stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Shubhamjadhavrao/tavaliing-web-site.git'
+                git 'https://github.com/Shubhamjadhavrao/tavaliing-web-site.git'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                script {
-                    docker.build("${env.IMAGE_NAME}")
-                }
+                sh 'docker build -t travel-web .'
             }
         }
 
         stage('Run Docker Container') {
             steps {
-                script {
-                    // Stop existing container if running
-                    sh "docker rm -f myapp-container || true"
-                    // Run new container
-                    sh "docker run -d --name myapp-container -p 8080:80 ${env.IMAGE_NAME}"
-                }
+                sh '''
+                docker rm -f travel-web || true
+                docker run -d -p 8090:80 --name travel-web travel-web
+                '''
             }
         }
     }
 
     post {
-        always {
-            echo "Pipeline finished."
+        success {
+            echo "✅ Deployment Successful"
+        }
+        failure {
+            echo "❌ Deployment Failed"
         }
     }
 }
