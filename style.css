@@ -1,104 +1,90 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
 body {
-    background-color: #f4f6f8;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
 }
 
-header {
+/* Navbar */
+.navbar {
+    background: #0b5ed7;
+    color: white;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
-    padding: 20px 50px;
-    background-color: #0a2540;
-    color: white;
+    align-items: center;
 }
 
-header .logo {
-    font-size: 24px;
+.navbar a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
     font-weight: bold;
 }
 
-header nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-}
-
+/* Hero Section */
 .hero {
-    height: 70vh;
-    background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
     background-size: cover;
-    background-position: center;
     color: white;
     text-align: center;
-    padding-top: 150px;
+    padding: 120px 20px;
 }
 
-.hero h1 {
-    font-size: 48px;
+.btn {
+    background: #ffc107;
+    padding: 12px 25px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
 
-.hero p {
-    font-size: 20px;
-    margin: 15px 0;
-}
-
-.hero button {
-    padding: 12px 30px;
-    font-size: 16px;
-    background-color: #ff7a00;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
+/* Destinations */
 .destinations {
     padding: 50px;
     text-align: center;
 }
 
-.destinations h2 {
-    margin-bottom: 30px;
-}
-
 .cards {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .card {
     background: white;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    overflow: hidden;
+    padding: 20px;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
 }
 
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+/* Packages */
+.packages {
+    padding: 50px;
+    text-align: center;
 }
 
-.card h3 {
-    margin: 15px 0 5px;
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 60%;
 }
 
-.card p {
-    padding: 0 15px 20px;
-    color: #555;
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
 }
 
+th {
+    background: #0b5ed7;
+    color: white;
+}
+
+/* Footer */
 footer {
-    background-color: #0a2540;
+    background: #222;
     color: white;
     text-align: center;
     padding: 15px;
-    margin-top: 40px;
 }
