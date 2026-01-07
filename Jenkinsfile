@@ -20,7 +20,7 @@ pipeline {
                 sh '''
                 docker stop travel-web || true
                 docker rm travel-web || true
-                docker run -d -p 8080:80 --name travel-web travel-web
+                docker run -d -p 8081:80 --name travel-web travel-web
                 '''
             }
         }
