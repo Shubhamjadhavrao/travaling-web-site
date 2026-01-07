@@ -2,11 +2,10 @@ pipeline {
     agent any
 
     stages {
-
         stage('Checkout Code') {
             steps {
-              git branch: 'main',
-                git 'https://github.com/Shubhamjadhavrao/tavaliing-web-site.git'
+                git branch: 'main',
+                    url: 'https://github.com/Shubhamjadhavrao/tavaliing-web-site.git'
             }
         }
 
@@ -19,8 +18,9 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 sh '''
-                docker rm -f travel-web || true
-                docker run -d -p 8090:80 --name travel-web travel-web
+                docker stop travel-web || true
+                docker rm travel-web || true
+                docker run -d -p 8080:80 --name travel-web travel-web
                 '''
             }
         }
@@ -28,10 +28,10 @@ pipeline {
 
     post {
         success {
-            echo "✅ Deployment Successful"
+            echo '✅ Deployment Successful'
         }
         failure {
-            echo "❌ Deployment Failed"
+            echo '❌ Deployment Failed'
         }
     }
 }
