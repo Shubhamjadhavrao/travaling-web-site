@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main',
                     url: 'https://github.com/Shubhamjadhavrao/travaliing-web-site.git'
             }
         }
