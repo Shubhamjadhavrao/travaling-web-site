@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout Code') {
-            steps {
-                    url: 'https://github.com/Shubhamjadhavrao/travaliing-web-site.git'
-            }
-        }
+        // stage('Checkout Code') {
+        //     steps {
+        //             url: 'https://github.com/Shubhamjadhavrao/travaliing-web-site.git'
+        //     }
+        // }
 
         stage('Build Docker Image') {
             steps {
