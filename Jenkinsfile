@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        // stage('Checkout Code') {
-        //     steps {
-        //             url: 'https://github.com/Shubhamjadhavrao/travaliing-web-site.git'
-        //     }
-        // }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t travel-web .'
