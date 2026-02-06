@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-              git branch: 'main',
-                  git 'https://github.com/Shubhamjadhavrao/travaling-web-site.git'
+              git branch: 'main', url: 'https://github.com/Shubhamjadhavrao/travaling-web-site.git'
             }
         }
 
