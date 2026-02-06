@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: travel-web
+spec:
+  selector:
+    matchLabels:
+      app: travel-web
+  template:
+    metadata:
+      labels:
+        app: travel-web
+    spec:
+      containers:
+      - name: travel-web
+        image: travel-web:latest
+        ports:
+        - containerPort: 80
