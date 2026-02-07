@@ -11,7 +11,6 @@ pipeline {
         stage('Build Image') {
             steps {
                 sh '''
-                eval $(minikube docker-env)
                 docker build -t travel-web .
                 '''
             }
