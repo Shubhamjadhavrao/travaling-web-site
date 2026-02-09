@@ -11,7 +11,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 sh '''
-                docker build -t travel-web .
+                docker build -t travel-web:latest .
                 '''
             }
         }
@@ -21,6 +21,7 @@ pipeline {
                 sh '''
                 kubectl apply -f ./minikube/deployment.yml
                 kubectl apply -f ./minikube/service.yml
+                kubectl rollout status deployment/travel-web
                 '''
             }
         }
